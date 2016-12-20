@@ -1,7 +1,7 @@
 function [D, P] = dijkstra(G)
 %INPUT: G - adjacency matrix, where 
 %G(i,j) = travel time, if edge ij exists, and 0, if not
-%OUTPUT: D - matrix of shortest distances
+%OUTPUT: D - matrix of shortest distances (not really needed)
 % P - matrix of shortest pathes, written as cellarray
 % P(i, j) = {i, ... , j}   
 
