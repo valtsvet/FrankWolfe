@@ -1,10 +1,13 @@
 function [D, P] = dijkstra(G)
-    
+%INPUT: G - adjacency matrix, where 
+%G(i,j) = travel time, if edge ij exists, and 0, if not
+%OUTPUT: D - matrix of shortest distances
+% P - matrix of shortest pathes, written as cellarray
+% P(i, j) = {i, ... , j}   
 
     v = size(G, 1); % Number of vertices
-    D = [];
+    D = []; 
     P = {};
-    %path = [];
     
     fl = 0;
     for i = 1:v

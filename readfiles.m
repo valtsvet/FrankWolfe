@@ -1,7 +1,15 @@
 function [OD, Net, N] = readfiles()
+%OD - matrix of flows from origin to destination
+%Net - matrix stores all info about the transport network of the city
+%Net(:,:, 1) - capacity
+%Net(:,:, 3) - free flow time
+%Net(:,:, 4) - B
+%Net(:,:, 5) - Power
+%Capacity, B and Power are needed to calculate edge's travel time
+%N - number of nodes
 fileID = fopen('SiouxFalls_trips.tntp', 'r');
 tline = fgets(fileID);
-N = strread(tline, '%u')(4); %number of zones
+N = strread(tline, '%u')(4); %number of nodes
 for i=1:5 tline = fgets(fileID); end
 o = strread(tline, '%u')(2); %first origin
 tline = fgets(fileID);
